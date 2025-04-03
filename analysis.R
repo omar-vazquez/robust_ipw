@@ -241,7 +241,7 @@ summary(dat)
 
 npmle <- dtnpmle(dat$incu, dat$ltrunc, dat$infe)
 igraph::is.connected(igraph::graph(unlist(sapply(seq_len(nrow(dat)), FUN = function(i) 
-  c(rbind(i, which((dat$ltrunc[i] <= dat$incu) & (dat$incu <= dat$infe[i))))))), "strong")
+  c(rbind(i, which((dat$ltrunc[i] <= dat$incu) & (dat$incu <= dat$infe[i]))))))), "strong")
 plot(npmle$masses$x/12, npmle$pt, xlab = "Years since infection", ylab = "Sampling Probability", ylim = c(0,1))
 
 y <- Surv(dat$incu, rep(1, nrow(dat)))
